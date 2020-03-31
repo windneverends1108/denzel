@@ -26,6 +26,7 @@ const getFilmography = async actor => {
   } catch (error) {
     console.error(error);
     return [];
+	
   }
 };
 
@@ -73,7 +74,6 @@ const getMovie = async link => {
 module.exports = async actor => {
   const limit = pLimit(P_LIMIT);
   const filmography = await getFilmography(actor);
-
   const promises = filmography.map(filmo => {
     return limit(async () => {
       return await getMovie(filmo.link);
