@@ -34,9 +34,9 @@ router.get('/', (req, res) => {
 		collection.findOne({},function(err, result){
 			if (err) throw err;
 			
-			a=result;
+			res.json(result);
 		});
-		res.json(a);
+		
 		client.close();
 });
 	});
