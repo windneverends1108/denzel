@@ -6,7 +6,7 @@ const uri = "mongodb+srv://windneverends:haha123@webtest-atwc1.mongodb.net/test?
 const Port='9292';
 const routeCourses=require("./courses");
 
-app.use("/movies",async routeCourses);
+app.use("/movies",routeCourses);
 
 app.get('/', (req, res) => {
 		res.send("Welcome~~~");
